@@ -56,7 +56,6 @@ A 5-field schedule format (`minute hour day-of-month month day-of-week`) used fo
 | Tool | Purpose |
 |---|---|
 | `schedule_task` | Create a one-time or recurring task with a description, prompt, execution time, and/or cron expression |
-| `list_tasks` | List all tasks, optionally filtered by status (PENDING or COMPLETED) |
 | `cancel_task` | Remove a task by its id |
 
 ### schedule_task Validation

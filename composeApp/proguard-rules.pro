@@ -60,7 +60,6 @@
 # META-INF signatures (BCKEY.SF / BCKEY.DSA) and invalidating per-class
 # SHA-256 digests. A Gradle doLast in build.gradle.kts copies the original
 # signed jar back over the ProGuard output; the -keep rule is still needed
-# so ProGuard does not report "missing class" warnings for the rest of the app.
 -keep class org.bouncycastle.** { *; }
 -dontwarn org.bouncycastle.**
 
@@ -103,7 +102,6 @@
 # concrete subtype (DeferredCoroutine) while the return instruction yields
 # the parent interface (Deferred); the JVM verifier rejects this with
 # "Bad return type ... async$<hash>". The explicit -optimizations line
-# disables that specialization family as a belt-and-braces safety net.
 -keep class kotlinx.coroutines.** { *; }
 -dontwarn kotlinx.coroutines.**
 -optimizations !method/specialization/*

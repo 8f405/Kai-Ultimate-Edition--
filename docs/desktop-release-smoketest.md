@@ -6,7 +6,6 @@ Before tagging a new version, walk through this checklist on a locally-built **r
 
 ## Why this exists
 
-Desktop release builds are minified with ProGuard. Many libraries in the dependency graph use reflection, `ServiceLoader`, or jar-manifest class discovery, and ProGuard cannot trace those calls statically. When an unreachable keep rule is missing, the build succeeds and packages fine but crashes at runtime on the first code path that touches the affected library. The Ubuntu CI job `Verify desktop release build (ProGuard sanity)` catches build-time failures only — it does not execute the packaged binary. This manual run is the only guardrail against runtime-only regressions until an automated smoke test is in place.
 
 ## How to run
 

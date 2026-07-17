@@ -106,7 +106,6 @@ Plus a built-in **Free** tier that requires no API key.
 
 - **[Chat & Conversations](features/chat.md)** — Message history, conversation persistence, image attachments, and speech output
 - **[Multi-Service](features/multi-service.md)** — Provider configuration, fallback chain, and connection validation
-- **[Tools](features/tools.md)** — Available tools, execution flow, safety guards, and enablement
 - **[Memories](features/memories.md)** — Memory lifecycle, categories, reinforcement, and promotion
 - **[Heartbeat](features/heartbeat.md)** — Autonomous self-checks, active hours, and configuration
 - **[Tasks](features/tasks.md)** — Scheduled tasks, future execution, and task management

@@ -23,7 +23,6 @@ Users can backup and restore all Kai settings via a human-readable JSON file. Th
 - Sections listed under **Excluded** below are never exported.
 
 ### Import
-- Tapping **Import** opens a native file picker filtered to `.json` files.
 - After the file is selected and parsed, an **Import Preview Dialog** appears.
 - The dialog detects which sections are present in the JSON and shows a checkbox for each one (all enabled by default), with item counts where applicable (e.g. "Services (2)", "Memory (5)").
 - A Replace/Merge toggle controls what happens to unselected sections:
@@ -78,7 +77,6 @@ Users can backup and restore all Kai settings via a human-readable JSON file. Th
 
 | File | Role |
 |------|------|
-| `composeApp/.../data/AppSettings.kt` | `ImportSection` enum, `detectImportSections()` / `detectExportableSections()` (the latter only flags sections with real user data), `exportToJson()` / `importFromJson()` core logic (both accept `Set<ImportSection>` for selective filtering), `sanitizeScheduledTasks()` / `sanitizeMemories()` default-filling helpers |
 | `composeApp/.../data/DataRepository.kt` | Interface methods (`exportSettingsToJson(sections)`, `getExportPreview()`, `importSettingsFromJson(...)`) |
 | `composeApp/.../data/RemoteDataRepository.kt` | Wires AppSettings to platform tool IDs, serializes JSON, runs `detectImportSections` over a full export to drive the export preview |
 | `composeApp/.../ui/settings/SettingsActions.kt` | Callbacks (`onExportSettings`, `onPrepareExport`, `onImportSettings`) |

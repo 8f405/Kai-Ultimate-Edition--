@@ -36,7 +36,6 @@ A marketplace is read via the [Claude Code plugin-marketplace standard](https://
 The "Skills" section lives in the Tools tab of settings (Android only, below MCP servers).
 
 - **If the sandbox isn't installed**, the section shows a notice and a "Set up sandbox" button that jumps to the Sandbox tab. No skills can be added until the sandbox is installed.
-- Otherwise, **"Add Skill"** opens a bottom sheet where the user can either paste a GitHub reference (`owner/repo`, `owner/repo/path/to/skill`, a full `https://github.com/owner/repo` URL, or a `.../tree/<ref>/path` URL) or **browse** the curated marketplaces. The browse list is fetched automatically when the dialog opens, is searchable (filter by id, description, or source), shows each entry's source name, and marks already-installed entries.
 
 Both paths install the same way: a browsed entry carries its full repo coordinates and installs through the same GitHub fetch as a manual install. Installing downloads the raw `SKILL.md` plus its sibling files (including nested ones; binaries and files over 256 KB are skipped) and writes them into `~/skills/<id>/`, replacing any existing folder, then reloads the cache. Install errors (invalid frontmatter, missing `SKILL.md`, unrecognized URL) are surfaced inline in the dialog.
 
@@ -46,7 +45,6 @@ Each skill card shows the slash command (`/<id>`) and the description; expanding
 
 ## Chat Autocomplete
 
-While the user is typing the first token of a message and it starts with `/`, a dropdown of installed skills appears above the composer, filtered by the typed query. Selecting an entry rewrites the leading token to the canonical `/<id> ` and positions the cursor for follow-up arguments. The dropdown only triggers when the cursor is within the leading slash token.
 
 ## Limitations
 

@@ -1,7 +1,6 @@
 ---
 mode: dynamic_ui
 slug: search-results
-description: Search results with cards, ratings, and filter actions
 ---
 
 ## User

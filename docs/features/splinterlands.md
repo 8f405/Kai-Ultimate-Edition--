@@ -49,7 +49,6 @@ The Stop button behavior depends on the current phase. Before a match is committ
 ### Parallel LLM Picker
 - System prompt includes full game rules reference (abilities, rulesets, combat mechanics)
 - Lists numbered summoners (S1, S2...) and monsters (M1, M2...) with stats
-- Pre-filters cards by inactive splinters, ruleset restrictions, and gladiator eligibility (Conscript check only; gladiators are otherwise excluded)
 - Deduplicates cards by detail ID before prompting
 - Expects JSON response with plain integer IDs: `{"summoner": <number>, "monsters": [<number>...]}`
 - All configured services are queried simultaneously with the same prompt via `async` coroutines
@@ -72,7 +71,6 @@ The Stop button behavior depends on the current phase. Before a match is committ
 - Gladiators are also kept available when the "Are You Not Entertained" ruleset is active (in addition to Conscript), unlike the LLM picker which only relies on Conscript
 
 ### Ruleset Filters (Category A -- card selection)
-Rarity, attack type, mana cost, color, and stat threshold filters applied before team picking.
 
 ## UI
 
@@ -80,7 +78,6 @@ The service list shows configured LLM services in priority order with:
 - Priority number, service icon (from DrawableResource), name, and model
 - A drag handle on each row for reordering services within the priority list
 - Trash icon button to remove a service
-- "Add Service" / "Add Another Service" dropdown button filtered to exclude already-added services
 
 The account row shows avatar (loaded via Coil), username, energy, W/L stats, and start/stop controls. The Start button is disabled when no services are configured. While a battle is running, additional details appear below the player row:
 
@@ -108,7 +105,6 @@ Recent Battles log shows up to 500 entries (5 visible by default, expandable): V
 | `splinterlands/SplinterlandsModels.kt` | Data classes, constants, `LlmServiceStatus` enum, `BattleStatus` with `serviceStatuses` and `winningServiceName` |
 | `splinterlands/SplinterlandsStore.kt` | CRUD via AppSettings; `getInstanceIds()`/`setInstanceIds()` for multi-service, `getModelName(instanceId)` |
 | `splinterlands/SplinterlandsApi.kt` | Ktor HTTP client for Splinterlands REST API |
-| `splinterlands/SplinterlandsTeamPicker.kt` | Ruleset filtering, card scoring, LLM prompt building, response parsing, validation, silent fixes |
 | `splinterlands/SplinterlandsBattleRunner.kt` | Battle loop with `queryServicesInParallel()` for parallel multi-service LLM querying |
 | `splinterlands/HiveCrypto.kt` | Expect declarations for Hive signing |
 | `splinterlands/HiveCrypto.jvm.kt` | BouncyCastle secp256k1 ECDSA (Desktop) |

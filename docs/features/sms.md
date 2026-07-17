@@ -19,7 +19,6 @@ The FOSS gate is purely manifest-based: the `foss` product flavor contributes `a
 - **Read**: list / read / search inbox SMS.
 - **Send** (including replies): AI drafts a message; user must tap Send in the review banner before anything is actually transmitted. The AI cannot bypass the banner — the `send_sms` / `reply_sms` tools only *stage* a draft; the actual `SmsManager.sendTextMessage` call is initiated by the tap handler in the UI.
 - **SMS only.** Multimedia/group messages (MMS) are out of scope.
-- **Inbox only for reads.** Sent, draft, and outbox rows are filtered out of polls.
 - **No contacts lookup.** Senders are shown as raw phone numbers. Adding contact-name resolution would require a separate `READ_CONTACTS` opt-in.
 
 ## Opt-in flow

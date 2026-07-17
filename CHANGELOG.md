@@ -236,7 +236,6 @@
 - Pulse animation on interactive chat stop button
 - Add missing model info
 - Performance improvements
-- Replace ABI filter with runtime check
 - Remove unnecessary Android version checks
 
 ## v2.2.1 — 2026-04-20
@@ -454,7 +453,6 @@
 - Show selected model on service rows in settings
 
 ### Fixes
-- Fix model filter
 
 ### Improvements
 - Improve startup time and migrate deprecated APIs
